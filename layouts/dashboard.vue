@@ -9,7 +9,8 @@
       <div class="flex-grow w-full max-w-7xl mx-auto xl:px-8 lg:flex">
         <div class="flex-1 min-w-0 bg-white xl:flex">
           <!-- Projects List -->
-          <slot/>  
+          <!-- Standar Nuxt untuk pemanggillan page dinamis dengan <Nuxt /> bukan <slot /> -->
+          <Nuxt />  
         </div>
       </div>
     </div>
@@ -17,6 +18,7 @@
 </template>
 <script>
 export default {
-  
+  // middleware cukup definisikan sekali di layout, maka page turunannya atau <Nuxt /> akan mengikuti
+  middleware: 'auth'
 }
 </script>
