@@ -96,12 +96,13 @@
 </template>
 
 <script>
+/* eslint-disable no-console */
 export default {
   data(){
     return {
       user: {
-        email : "",
-        password: ""
+        email : '',
+        password: ''
       }
     }
   },
@@ -109,18 +110,18 @@ export default {
     authUser() {
       // Example user email and password
       // user : demo@gmail.com ; pass : demo123
-      if(this.user.email === "demo@gmail.com" && this.user.password === "demo123"){
+      if(this.user.email === 'demo@gmail.com' && this.user.password === 'demo123'){
         const user = {
           user: {
-            name: "demo",
-            address: "indramayu"
+            name: 'demo',
+            address: 'indramayu'
           },
-          token: "JB2y816398BJAB"
+          token: 'JB2y816398BJAB'
         }
         this.$store.commit('user/login', user);
-        this.$router.push("/dashboard")
+        this.$router.push('/dashboard')
       } else {
-        console.log("error");
+        console.log('error');
       }
     }
   }
