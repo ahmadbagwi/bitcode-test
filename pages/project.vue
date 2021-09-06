@@ -1,17 +1,16 @@
 <template>
-  <layout-dashboard>
+  <div>
     <project/>
-  </layout-dashboard>
+  </div>
 </template>
 
 <script>
-import LayoutDashboard from '~/layouts/dashboard.vue';
-import Project from '~/components/Project.vue';
+// nuxt otomatis import komponen tanpa perlu di definisikan
+// import LayoutDashboard from '~/layouts/dashboard.vue'
+// import Project from '~/components/Project.vue'
 export default {
-  middleware: 'auth',
-  components: {
-    LayoutDashboard,
-    Project
-  }
+  layout: 'dashboard'
+  // middleware dipanggil di layout, lebih general
+  // middleware: 'auth'
 }
 </script>
