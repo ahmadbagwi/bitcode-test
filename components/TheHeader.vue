@@ -44,7 +44,7 @@
                 <nuxt-link to="/dashboard" class="px-3 py-2 rounded-md text-sm font-medium text-indigo-200 hover:text-white" aria-current="page">Dashboard</nuxt-link>
                 <nuxt-link to="/project" class="px-3 py-2 rounded-md text-sm font-medium text-indigo-200 hover:text-white">Project</nuxt-link>
                 <nuxt-link to="/activity" class="px-3 py-2 rounded-md text-sm font-medium text-indigo-200 hover:text-white">Activity</nuxt-link>
-                <nuxt-link to="#" @click.native="logout" class="px-3 py-2 rounded-md text-sm font-medium text-indigo-200 hover:text-white">Logout</nuxt-link>
+                <nuxt-link to="#" class="px-3 py-2 rounded-md text-sm font-medium text-indigo-200 hover:text-white" @click.native="logout">Logout</nuxt-link>
               </div>
             </div>
           </div>
@@ -52,13 +52,13 @@
       </div>
 
       <!-- Mobile menu, show/hide based on menu state. -->
-      <div class="lg:hidden" id="mobile-menu">
+      <div id="mobile-menu" class="lg:hidden">
         <div class="px-2 pt-2 pb-3 space-y-1">
           <!-- Current: "text-white bg-indigo-800", Default: "text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600" -->
           <nuxt-link to="/dashboard" class="text-white bg-indigo-800 block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Dashboard</nuxt-link>
           <nuxt-link to="/project" class="text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600 block px-3 py-2 rounded-md text-base font-medium">Project</nuxt-link>
           <nuxt-link to="/activity" class="text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600 block px-3 py-2 rounded-md text-base font-medium">Activity</nuxt-link>
-          <nuxt-link to="#" @click.native="logout" class="text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600 block px-3 py-2 rounded-md text-base font-medium">Logout</nuxt-link>
+          <nuxt-link to="#" class="text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600 block px-3 py-2 rounded-md text-base font-medium" @click.native="logout">Logout</nuxt-link>
         </div>
         <div class="pt-4 pb-3 border-t border-indigo-800">
         </div>
@@ -71,8 +71,8 @@
 export default {
   methods: {
     logout() {
-      this.$store.commit('user/logout');
-      this.$router.push('/');
+      this.$store.commit('user/logout')
+      this.$router.push('/')
     },
   }
 }
